@@ -15,7 +15,7 @@ ___
 
 Above python packages can be installed using below commands,
 
-```
+```bash
 sudo pip -q install requests==2.8.1
 sudo pip -q install graphitesend
 ```
@@ -58,7 +58,9 @@ query_execution
 node_scheduler
 task_executor
 task_manager
+g1_gc_young
+g1_gc_old
 cluster_memory_manager
 ```
 
-Seperate metric configuration file and auto dependencies installation will be available in next version of this emitter. Emitted metrics can be viewed using Graphite or Grafana dashboards.
+Separate metric configuration file and auto dependencies installation will be available in next version of this emitter. Emitted metrics can be viewed using Graphite or Grafana dashboards.
