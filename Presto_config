@@ -1,0 +1,41 @@
+# Presto JMX MBeans
+[MBEAN_ALIAS]
+memory = java.lang:type=Memory
+gc_cms = java.lang:type=GarbageCollector,name=ConcurrentMarkSweep
+g1_gc_young = java.lang:type=GarbageCollector,name=G1 Young Generation
+g1_gc_old = java.lang:type=GarbageCollector,name=G1 Old Generation
+gc_parnew = java.lang:type=GarbageCollector,name=ParNew
+os = java.lang:type=OperatingSystem
+query_manager = com.facebook.presto.execution:name=QueryManager
+query_execution = com.facebook.presto.execution:name=QueryExecution
+node_scheduler = com.facebook.presto.execution:name=NodeScheduler
+task_executor = com.facebook.presto.execution:name=TaskExecutor
+task_manager = com.facebook.presto.execution:name=TaskManager
+memory_pool_general = com.facebook.presto.memory:type=MemoryPool,name=general
+memory_pool_reserved = com.facebook.presto.memory:type=MemoryPool,name=reserved
+memory_pool_system = com.facebook.presto.memory:type=MemoryPool,name=system
+cluster_memory_manager = com.facebook.presto.memory:name=ClusterMemoryManager
+cluster_memory_pool_general = com.facebook.presto.memory:type=ClusterMemoryPool,name=general
+cluster_memory_pool_reserved = com.facebook.presto.memory:type=ClusterMemoryPool,name=reserved
+cluster_memory_pool_system = com.facebook.presto.memory:type=ClusterMemoryPool,name=system
+
+# Presto Node metrics
+[NODE_METRICS]
+NODE_METRICS = ["recentRequests","recentFailures","recentSuccesses","recentFailureRatio"]
+
+# Presto Node OS Metics
+[OS_METRICS]
+OS_METRICS = ["AvailableProcessors","CommittedVirtualMemorySize","OpenFileDescriptorCount","TotalSwapSpaceSize","FreeSwapSpaceSize","ProcessCpuTime","FreePhysicalMemorySize","TotalPhysicalMemorySize","SystemCpuLoad","ProcessCpuLoad","SystemLoadAverage"]
+
+[PRESTO_COORDINATOR]
+IP = 172.21.6.11
+PORT = 8285
+mbean_path = /v1/jmx/mbean/
+node_path = /v1/node
+
+[GRAPHITE]
+IP = localhost
+PORT = 2003
+
+
+
