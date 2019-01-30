@@ -41,11 +41,17 @@ class PrestodbEmitter:
         self.push_metrics("cluster_memory_manager", "memory_manager_metrics")
         self.push_metrics("query_manager", "query_manager_metrics")
         self.push_metrics("query_execution", "query_execution_metrics")
+        self.push_metrics("task_manager", "task_manager_metrics")
+        self.push_metrics("memory", "memory_usage_metrics")
+        self.push_metrics("g1_gc_young", "gc_g1_metrics.g1_young_generation")
+        self.push_metrics("g1_gc_old", "gc_g1_metrics.g1_old_generation")
 
         cluster_nodes = self.get_all_cluster_nodes()
         for node in cluster_nodes:
-            print(">>>> Printing worker node being processed")
-            print(node)
+            print("Processing metrics for node...", node)
+            if node == self.presto_coord_url:
+                print("Not pushing metrics for this node, it is the coordinator and metrics have already been pushed!")
+                continue
             self.cluster_node = node
             self.push_metrics("os", "os_metrics")
             self.push_metrics("task_executor", "task_executor_metrics")
