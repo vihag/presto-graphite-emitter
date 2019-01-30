@@ -44,6 +44,8 @@ class PrestodbEmitter:
 
         cluster_nodes = self.get_all_cluster_nodes()
         for node in cluster_nodes:
+            print(">>>> Printing worker node being processed")
+            print(node)
             self.cluster_node = node
             self.push_metrics("os", "os_metrics")
             self.push_metrics("task_executor", "task_executor_metrics")

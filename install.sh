@@ -53,7 +53,7 @@ echo "Required packages are Available"
 if [ $os = "rpm" ]; then
     sudo cp prestodb-graphite-emitter.py /usr/bin/prestodb-graphite-emitter.py
     sudo chmod +x /usr/bin/prestodb-graphite-emitter.py
-    sudo cp presto_config.py /usr/bin/presto_config.py
+    sudo cp presto_config /usr/bin/presto_config.py
     sudo echo "
     [Unit]
     Description=presto_emitter
@@ -73,7 +73,7 @@ if [ $os = "rpm" ]; then
 else
     sudo cp prestodb-graphite-emitter.py /usr/bin/prestodb-graphite-emitter.py
     sudo chmod +x /usr/bin/prestodb-graphite-emitter.py
-    sudo cp presto_config.py /usr/bin/presto_config.py
+    sudo cp presto_config /usr/bin/presto_config.py
     sudo echo "
     [Unit]
     Description=presto_Emitter
