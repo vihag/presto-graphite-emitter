@@ -28,14 +28,14 @@ NODE_METRICS = ["recentRequests","recentFailures","recentSuccesses","recentFailu
 OS_METRICS = ["AvailableProcessors","CommittedVirtualMemorySize","OpenFileDescriptorCount","TotalSwapSpaceSize","FreeSwapSpaceSize","ProcessCpuTime","FreePhysicalMemorySize","TotalPhysicalMemorySize","SystemCpuLoad","ProcessCpuLoad","SystemLoadAverage"]
 
 [PRESTO_COORDINATOR]
-IP = 172.21.6.11
-PORT = 8285
+IP = localhost
+PORT = 8081
 mbean_path = /v1/jmx/mbean/
 node_path = /v1/node
 
 [GRAPHITE]
-IP = localhost
-PORT = 2003
+IP = 10.0.0.14
+PORT = 81
 
 
 

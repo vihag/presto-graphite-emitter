@@ -51,16 +51,16 @@ echo "Required packages are Available"
 
 # Configure system service
 if [ $os = "rpm" ]; then
-    sudo cp Prestodb_emitter.py /usr/bin/Prestodb_emitter.py
-    sudo chmod +x /usr/bin/Prestodb_emitter.py
-    sudo cp Presto_config.py /usr/bin/Presto_config.py
+    sudo cp prestodb-graphite-emitter.py /usr/bin/prestodb-graphite-emitter.py
+    sudo chmod +x /usr/bin/prestodb-graphite-emitter.py
+    sudo cp presto_config.py /usr/bin/presto_config.py
     sudo echo "
     [Unit]
-    Description=Presto_Emitter
+    Description=presto_emitter
 
     [Service]
     Type=idle
-    ExecStart=/usr/bin/Prestodb_emitter.py /usr/bin/Prestodb_emitter.py $interval
+    ExecStart=/usr/bin/prestodb-graphite-emitter.py /usr/bin/presto_config $interval
 
     [Install]
     WantedBy=multi-user.target
@@ -71,16 +71,16 @@ if [ $os = "rpm" ]; then
     sudo systemctl enable presto_emitter.service
 
 else
-    sudo cp Prestodb_emitter.py /usr/bin/Prestodb_emitter.py
-    sudo chmod +x /usr/bin/Prestodb_emitter.py
-    sudo cp Presto_config.py /usr/bin/Presto_config.py
+    sudo cp prestodb-graphite-emitter.py /usr/bin/prestodb-graphite-emitter.py
+    sudo chmod +x /usr/bin/prestodb-graphite-emitter.py
+    sudo cp presto_config.py /usr/bin/presto_config.py
     sudo echo "
     [Unit]
-    Description=Presto_Emitter
+    Description=presto_Emitter
 
     [Service]
     Type=idle
-    ExecStart=/usr/bin/Prestodb_emitter.py /usr/bin/Prestodb_emitter.py $interval
+    ExecStart=/usr/bin/prestodb-graphite-emitter.py /usr/bin/presto_config $interval
 
     [Install]
     WantedBy=multi-user.target

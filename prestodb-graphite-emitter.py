@@ -14,7 +14,7 @@ import re
 #This collects metrics including os metrics, node metrics, garbage collector metrics, qeury metrics, task manager/executor metrics,
 #cluster manager metrics etc. To send prestodb metrics application is using graphitesend as plugin and it should be installed before running app.
 #requirement can be installed using 'sudo pip install graphitesend'
-#Usage : ./prestodb-graphite-emitter.py <Prestodb host> <Prestodb port> <Graphite host> <graphite port(carbon-cache line receiver port)> <time interval in seconds>
+#Usage : ./prestodb-graphite-emitter.py.py <Prestodb host> <Prestodb port> <Graphite host> <graphite port(carbon-cache line receiver port)> <time interval in seconds>
 class PrestodbEmitter:
 
     # PrestodbEmitter constructor which accepts presto and
