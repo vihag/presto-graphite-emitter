@@ -85,7 +85,7 @@ class PrestodbEmitter:
             for attribute in json_metrics["attributes"]:
                 if 'name' in attribute and 'value' in attribute:
                     filtered_metrics[attribute["name"]] = self.extract_value(attribute["value"])
-            print("Pushing metrics for "+mbean_alias+" ; with prefix "+prefix+" ; with a total dictionary size of "+len(dict))
+            print("Pushing metrics for "+mbean_alias+" ; with prefix "+prefix+" ; with a total dictionary size of "+len(filtered_metrics))
             self.push_filtered_metrics(filtered_metrics, graphite_cli, prefix)
         return
 
