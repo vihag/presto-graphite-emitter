@@ -142,7 +142,6 @@ httpclient_for_worker_info = io.airlift.http.client:name=forworkerinfo,type=http
 httpserver_channel_listener = io.airlift.http.server:context=http/1.1|h2c@174721c4,id=0,type=httpserverchannellistener
 classpath_resource_handler = io.airlift.http.server:id=0,type=classpathresourcehandler
 stats_recording_handler = io.airlift.http.server:id=0,type=statsrecordinghandler
-classpath_resource_handler = io.airlift.http.server:id=1,type=classpathresourcehandler
 http_server = io.airlift.http.server:name=httpserver
 request_stats = io.airlift.http.server:name=requeststats
 stacktrace_mbean = io.airlift.jmx:name=stacktracembean
