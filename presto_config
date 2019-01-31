@@ -152,11 +152,11 @@ pausemeter = io.airlift.stats:name=PauseMeter
 memorypool_code_cache = java.lang:name=code cache,type=MemoryPool
 memorymanager_code_cache_manager = java.lang:name=codecachemanager,type=MemoryManager
 memorypool_compressed_class_space = java.lang:name=compressed class space,type=MemoryPool
-memorypool_g1_eden_space = java.lang:name=g1 eden space,type=MemoryPool
-memorypool_g1_old_gen = java.lang:name=g1 old gen,type=MemoryPool
-garbagecollector_g1_old_generation = java.lang:name=g1 old generation,type=GarbageCollector
-memorypool_g1_survivor_space = java.lang:name=g1 survivor space,type=MemoryPool
-garbagecollector_g1_young_generation = java.lang:name=g1 young generation,type=GarbageCollector
+memorypool_g1_eden_space = java.lang:name=G1 Eden Space,type=MemoryPool
+memorypool_g1_old_gen = java.lang:name=G1 Old Gen,type=MemoryPool
+garbagecollector_g1_old_generation = java.lang:name=G1 Old Generation,type=GarbageCollector
+memorypool_g1_survivor_space = java.lang:name=G1 Survivor Space,type=MemoryPool
+garbagecollector_g1_young_generation = java.lang:name=G1 Young Generation,type=GarbageCollector
 memorymanager_metaspace_manager = java.lang:name=metaspace manager,type=MemoryManager
 memorypool_metaspace = java.lang:name=metaspace,type=MemoryPool
 classloading = java.lang:type=ClassLoading
