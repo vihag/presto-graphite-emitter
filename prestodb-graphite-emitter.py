@@ -47,10 +47,9 @@ class PrestodbEmitter:
 
         cluster_nodes = self.get_all_cluster_nodes()
         for node in cluster_nodes:
-            print("Processing metrics for node...", node)
             if node == self.presto_coord_url:
-                print("Not pushing metrics for this node, it is the coordinator and metrics have already been pushed!")
                 continue
+            print("Processing metrics for node...", node)
             self.cluster_node = node
             self.push_metrics("os", "os_metrics")
             self.push_metrics("task_executor", "task_executor_metrics")
@@ -86,6 +85,7 @@ class PrestodbEmitter:
             for attribute in json_metrics["attributes"]:
                 if 'name' in attribute and 'value' in attribute:
                     filtered_metrics[attribute["name"]] = self.extract_value(attribute["value"])
+            print("Pushing metrics for "+mbean_alias+" ; with prefix "+prefix+" ; with a total dictionary size of "+len(dict))
             self.push_filtered_metrics(filtered_metrics, graphite_cli, prefix)
         return
 
@@ -118,10 +118,10 @@ class PrestodbEmitter:
             if isinstance(v, dict):
                 self.push_filtered_metrics(v, graphite_cli, key)
             elif isinstance(v, int):
-                print(key + "\t: \t" + str(v))
+                #print(key + "\t: \t" + str(v))
                 graphite_cli.send(key, v)
             elif isinstance(v, float):
-                print(key + "\t: \t" + str(v))
+                #print(key + "\t: \t" + str(v))
                 graphite_cli.send(key, v)
             else:
                 continue
