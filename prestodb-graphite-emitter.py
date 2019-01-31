@@ -137,6 +137,9 @@ class PrestodbEmitter:
 
     # This method makes REST call to particular mbean type and returns json object
     def get_mbean_json_metrics(self, mbean_alias):
+        print("Getting mbean from : "+self.config['PRESTO_COORDINATOR']['mbean_path'])
+        print("Getting mbean for  : "+self.cluster_node)
+        print("mbean alias : "+mbean_alias+" translates to "+self.config['MBEAN_ALIAS'][mbean_alias])
         response = requests.get(self.cluster_node + self.config['PRESTO_COORDINATOR']['mbean_path']
                                 + self.config['MBEAN_ALIAS'][mbean_alias])
         return response.json()
