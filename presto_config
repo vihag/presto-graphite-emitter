@@ -24,7 +24,7 @@ orc_filewriter_factory = com.facebook.presto.hive:name=hive,type=orcfilewriterfa
 qubole_hive_split_manager = com.facebook.presto.hive:name=hive,type=qubolehivesplitmanager
 namenode_stats = com.facebook.presto.hive:name=namenodestats
 
-cluster_memory_manager = com.facebook.presto.memory:name=clustermemorymanager
+cluster_memory_manager = com.facebook.presto.memory:name=clusterMemoryManager
 cluster_memory_pool_general = com.facebook.presto.memory:name=general,type=clustermemorypool
 memory_pool_general = com.facebook.presto.memory:name=general,type=memorypool
 cluster_memory_pool_reserved = com.facebook.presto.memory:name=reserved,type=clustermemorypool
