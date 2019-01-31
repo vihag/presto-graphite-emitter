@@ -166,12 +166,11 @@ operatingsystem = java.lang:type=operatingsystem
 runtime = java.lang:type=runtime
 threading = java.lang:type=threading
 bufferpool_direct = java.nio:name=direct,type=bufferpool
-bufferpool_mapped
 
 queued_thread_pool = org.eclipse.jetty.util.thread:id=0,type=queuedthreadpool
 reserved_thread_executor = org.eclipse.jetty.util.thread:id=0,type=reservedthreadexecutor
 metrics = qubole:name=metrics
-bufferpool=  rubix:name=stats= java.nio:name=mapped,type=bufferpool
+bufferpool =  rubix:name=stats= java.nio:name=mapped,type=bufferpool
 
 # Presto Node metrics
 [NODE_METRICS]
