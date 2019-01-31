@@ -172,6 +172,8 @@ reserved_thread_executor = org.eclipse.jetty.util.thread:id=0,type=reservedthrea
 metrics = qubole:name=metrics
 bufferpool =  rubix:name=stats= java.nio:name=mapped,type=bufferpool
 
+os = java.lang:type=OperatingSystem
+
 # Presto Node metrics
 [NODE_METRICS]
 NODE_METRICS = ["recentRequests","recentFailures","recentSuccesses","recentFailureRatio"]
