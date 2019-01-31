@@ -21,11 +21,9 @@ if [ $? -ne 0 ]; then
     if [ $os == "rpm" ]; then
         sudo yum install -Y epel-release
         sudo yum install python-pip
-        sudo yum install -Y systemd
     else
         sudo apt-get install -Y epel-release
         sudo apt-get install python-pip
-        sudo apt-get install -Y systemd
     fi
 
     echo "Pip is installed. Now checking/installing required packages.."        
@@ -55,7 +53,7 @@ echo "Required packages are Available"
 if [ $os = "rpm" ]; then
     sudo cp prestodb-graphite-emitter.py /usr/bin/prestodb-graphite-emitter.py
     sudo chmod +x /usr/bin/prestodb-graphite-emitter.py
-    sudo cp presto_config /usr/bin/presto_config.py
+    sudo cp presto_config /usr/bin/presto_config
     sudo echo "
     [Unit]
     Description=presto_emitter
@@ -75,7 +73,7 @@ if [ $os = "rpm" ]; then
 else
     sudo cp prestodb-graphite-emitter.py /usr/bin/prestodb-graphite-emitter.py
     sudo chmod +x /usr/bin/prestodb-graphite-emitter.py
-    sudo cp presto_config /usr/bin/presto_config.py
+    sudo cp presto_config /usr/bin/presto_config
     sudo echo "
     [Unit]
     Description=presto_Emitter

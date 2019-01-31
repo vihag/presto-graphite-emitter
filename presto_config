@@ -189,8 +189,8 @@ mbean_path = /v1/jmx/mbean/
 node_path = /v1/node
 
 [GRAPHITE]
-IP = 10.0.0.14
-PORT = 81
+IP = 10.0.0.55
+PORT = 2003
 
 
 

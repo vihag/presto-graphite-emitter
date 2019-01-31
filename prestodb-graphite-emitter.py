@@ -20,6 +20,9 @@ class PrestodbEmitter:
     # PrestodbEmitter constructor which accepts presto and
     def __init__(self, config_path):
         self.config = configparser.ConfigParser()
+        self.cluster_node = ''
+        self.presto_coord_url = ''
+        self.node_path = ''
         self.read_properties(config_path)
 
     # Reading config file and parsing provided configurations
@@ -42,6 +45,7 @@ class PrestodbEmitter:
         self.push_metrics("query_manager", "query_manager_metrics")
         self.push_metrics("query_execution", "query_execution_metrics")
         self.push_metrics("task_manager", "task_manager_metrics")
+        self.push_metrics("task_executor", "task_executor_metrics")
         self.push_metrics("memory", "memory_usage_metrics")
         self.push_metrics("garbagecollector_g1_young_generation", "gc_g1_metrics.garbagecollector_g1_young_generation")
 
