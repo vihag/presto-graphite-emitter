@@ -120,10 +120,10 @@ class PrestodbEmitter:
             if isinstance(v, dict):
                 self.push_filtered_metrics(v, graphite_cli, key)
             elif isinstance(v, int):
-                print(key + "\t: \t" + v)
+                print(key + "\t: \t" + str(v))
                 graphite_cli.send(key, v)
             elif isinstance(v, float):
-                print(key + "\t: \t" + v)
+                print(key + "\t: \t" + str(v))
                 graphite_cli.send(key, v)
             else:
                 continue
