@@ -43,8 +43,8 @@ class PrestodbEmitter:
         self.push_metrics("query_execution", "query_execution_metrics")
         self.push_metrics("task_manager", "task_manager_metrics")
         self.push_metrics("memory", "memory_usage_metrics")
-        self.push_metrics("g1_gc_young", "gc_g1_metrics.g1_young_generation")
-        self.push_metrics("g1_gc_old", "gc_g1_metrics.g1_old_generation")
+        self.push_metrics("garbagecollector_g1_young_generation", "gc_g1_metrics.garbagecollector_g1_young_generation")
+        self.push_metrics("garbagecollector_g1_old_generation", "gc_g1_metrics.garbagecollector_g1_old_generation")
 
         cluster_nodes = self.get_all_cluster_nodes()
         for node in cluster_nodes:
@@ -54,11 +54,11 @@ class PrestodbEmitter:
                 continue
             self.cluster_node = node
             self.push_metrics("os", "os_metrics")
-            #self.push_metrics("task_executor", "task_executor_metrics")
+            self.push_metrics("task_executor", "task_executor_metrics")
             self.push_metrics("task_manager", "task_manager_metrics")
             self.push_metrics("memory", "memory_usage_metrics")
-            self.push_metrics("g1_gc_young", "gc_g1_metrics.g1_young_generation")
-            self.push_metrics("g1_gc_old", "gc_g1_metrics.g1_old_generation")
+            self.push_metrics("garbagecollector_g1_young_generation", "gc_g1_metrics.garbagecollector_g1_young_generation")
+            self.push_metrics("garbagecollector_g1_old_generation", "gc_g1_metrics.garbagecollector_g1_old_generation")
 
     # Get all cluster nodes
     def get_all_cluster_nodes(self):
